@@ -1,0 +1,24 @@
+.wrap {
+	padding: 20px 20px 70px;
+}
+
+body{
+	font-family:"微软雅黑" !important;
+}
+
+button.self_modal_btn{
+	width:80px;
+}
+div.self_modal_dialog{
+	width:400px;
+	margin:100px auto;
+}
+
+tbody .glyphicon {
+    font-size:16px;
+    margin-right:10px;
+}
+tbody .glyphicon:hover {
+    color:green;
+    cursor: pointer;
+}
