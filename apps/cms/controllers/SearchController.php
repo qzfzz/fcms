@@ -27,7 +27,7 @@ class SearchController extends Controller
         //检查全文搜索的配置
         $status = false;
         $msg = '请为title, description, content 字段<br>&#12288; 统一建全文索引，且索引名为 search';
-        $index = $this->db->describeIndexes( 'articles' );
+        $index = $this->db->describeIndexes( 'fcms_articles' );
         if( isset( $index[ 'search' ] ) )
         {
             $columns = $index[ 'search' ]->getColumns();

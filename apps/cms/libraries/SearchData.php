@@ -18,7 +18,8 @@ class SearchData extends Injectable{
 	{
         $strKey = str_replace( ' ', '* ', $key );
         $strKey .= '*';
-        $article = Articles::findByRawSql( $strKey );
+
+        $article = Articles::findSearch( $strKey );
         $res = $article->toArray();
 		$pagination = new PaginatorArray( array(
 			'data'  => $res,

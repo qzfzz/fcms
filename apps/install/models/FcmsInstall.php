@@ -46,25 +46,13 @@ class FcmsInstall extends Model
      */
     public function importDb( $link, $file, $dbName )
     {
-        $sqlCreate = 'CREATE DATABASE ' . $dbName . ' DEFAULT CHARSET utf8 COLLATE utf8_general_ci;';
-        //数据库创建成功
-        if( mysql_query( $sqlCreate ) )
-        {
-            mysql_select_db( $dbName, $link );
-            mysql_query( 'set names utf8' );
-            
-            $lFileSize = filesize( $file );
-            
-            //得到每个拆分的sql语句块
-            return $this->partlyRead( $file, $lFileSize, $link, $this->partsize );
-        }
-        //数据库创建失败
-        else
-       {
-            file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '数据库名已存在' . PHP_EOL, FILE_APPEND );
-            return $res = ReturnInfo::resInfo( 4, "<p>数据库名已存在，请删除现有同名数据库，
-                           或返回上一页重新更换数据库名！&nbsp;&nbsp;" . self::STR_WRONG . "</p>" );
-        }
+        mysql_select_db( $dbName, $link );
+        mysql_query( 'set names utf8' );
+        
+        $lFileSize = filesize( $file );
+        
+        //得到每个拆分的sql语句块
+        return $this->partlyRead( $file, $lFileSize, $link, $this->partsize );
     }
     
     /**

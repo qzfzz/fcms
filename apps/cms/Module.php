@@ -127,7 +127,7 @@ class Module implements ModuleDefinitionInterface {
 			return $db;
 		}, true );
 		
-		$di->module = 'cms';
+// 		$di->module = 'cms';
 		
 		$di->set ( 'article', function(){ return new ArticleData (); }, true);
 		$di->set ( 'ad', function(){ return new AdsData(); }, true );

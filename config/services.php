@@ -54,7 +54,6 @@ $di->set( 'session', function() use($config)
     ini_set( "session.cookie_httponly", 1 );
 
     $session->start();
-
     return $session;
 }, true );
 

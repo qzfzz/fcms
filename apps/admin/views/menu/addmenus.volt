@@ -83,7 +83,7 @@
 						      </span>
 						      <select class="form-control" id="outlink_select" aria-label="menu-linkurl" name="select_url"/>
 								  <option disabled class="disabled">默认</option>
-								  <option value="0">首页</option>
+								  <option value="0" {% if hasIndex is defined %} disabled class="disabled" {% endif %}>首页</option>
 								  <option disabled class="disabled">文章分类</option>
 								  {% if art_cat is defined and art_cat is not empty %}
                             		{% for item in art_cat %}

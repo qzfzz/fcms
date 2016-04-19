@@ -21,8 +21,15 @@
             }
             /* 图片上传 */
 			.goods-pic {
-                position:relative;margin:0 20px 20px 0;width:100px;height:100px;
-                border:none;display:inline-block; vertical-align: middle;text-align: center;color:gray;cursor:pointer;
+                position:relative;
+                margin:0 20px 20px 0;
+                height:100px;
+                border:none;
+                display:inline-block;
+				vertical-align:middle;
+				text-align: center;
+				color:gray;
+				cursor:pointer;
             }
             .goods-pic-add {
                 border:1px dashed gray;
@@ -34,7 +41,7 @@
                 display:none;
             }
             .goods-pic img {
-               width:100px;height:100px;
+            	max-height:100px;
             }
             .goods-pic-operate {
                 position:absolute;bottom: 0; width:100%; text-align: center;background:gainsboro; display:none;

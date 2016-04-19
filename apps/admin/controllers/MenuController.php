@@ -343,6 +343,16 @@ class MenuController extends AdminBaseController{
 	 */
 	public function addmenusAction()
 	{
+		//是否已经设置过首页菜单
+		$where = array(
+				'columns'	=> 'id,delsign,relid,url,pid,cid',
+				'conditions'=> 'delsign=:del: and relid=:relid:',
+				'bind'		=> array( 'del' => SystemEnums::DELSIGN_NO , 'relid' => 0 ),
+		);
+		$res = Menu::find( $where );
+		if( $res && count( $res ) > 0 )
+			$this->view->setVar( 'hasIndex' , 'has' );
+		
 		//菜单分类
 		$cWhere = array(
 			'select'	=> 'id,name,delsign,is_name',
@@ -401,6 +411,16 @@ class MenuController extends AdminBaseController{
 			$this->response->redirect( '/admin/menu/addmenus' );
 			exit;
 		}
+		
+		//是否已经设置过首页菜单
+		$where = array(
+				'columns'	=> 'id,delsign,relid,url,pid,cid',
+				'conditions'=> 'delsign=:del: and relid=:relid: and id <> :optid:',
+				'bind'		=> array( 'del' => SystemEnums::DELSIGN_NO , 'relid' => 0 , 'optid' => $optid  ),
+		);
+		$res = Menu::find( $where );
+		if( $res && count( $res ) > 0 )
+			$this->view->setVar( 'hasIndex' , 'has' );
 		
 		$where = array(
 				'conditions'=> 'delsign=:del: and id=:optid:',
@@ -478,7 +498,7 @@ class MenuController extends AdminBaseController{
 			$url = $wirteUrl;
 			$relid = NULL;
 		}
-		else if( isset( $isChk ) && false !== $selectUrl )
+		else if( isset( $isChk ) && false != $selectUrl )
 		{
 			$url = NULL;
 			$relid = $selectUrl;

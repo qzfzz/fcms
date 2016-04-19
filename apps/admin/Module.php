@@ -37,6 +37,7 @@ class Module implements ModuleDefinitionInterface
 			'apps\admin\enums' => APP_ROOT . 'apps/admin/enums/',
 			'apps\admin\libraries' => APP_ROOT . 'apps/admin/libraries/',
 			'apps\admin\vos' => APP_ROOT . 'apps/admin/vos/',
+            'apps\install\models' => APP_ROOT . 'apps/install/models/',
 		));
 
 		$loader->register();
@@ -113,7 +114,7 @@ class Module implements ModuleDefinitionInterface
 				}, true );
 		
 		
-		$di->module = 'admin';
+// 		$di->module = 'admin';
 		
 		$di->set ( 'goods',function(){ return new GoodsDatas(); }, true);
 		$di->set ( 'sysinfo' , function(){ return new SysInfoData(); }, true );

@@ -146,4 +146,11 @@ class TestController extends \Phalcon\Mvc\Controller
 // 		echo $a->id;
 	}
 	
+	public function tmAction()
+	{
+// 		echo $this->dispatcher->getModuleName();
+		
+// 		echo $this->router->getModuleName();
+	}
+	
 }

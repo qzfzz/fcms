@@ -2,6 +2,9 @@
 
 namespace apps\cms\models;
 
+use Phalcon\Mvc\Model;
+use Phalcon\Mvc\Model\Resultset\Simple as Resultset;
+
 !defined( 'APP_ROOT' ) && exit( 'Direct Access Deny!' );
 
 /**
@@ -9,7 +12,7 @@ namespace apps\cms\models;
  * @author Carey
  *
  */
-class Articles extends \Phalcon\Mvc\Model
+class Articles extends Model
 {
 
     /**
@@ -150,5 +153,14 @@ class Articles extends \Phalcon\Mvc\Model
         $this->belongsTo( 'cat_id' , '\apps\cms\models\ArticleCats' , 'id' , array( 'alias' => 'catinfo' ) );
        
         $this->setSource( $this->di[ 'config' ][ 'database'][ 'prefix'] . $this->getSource() );
+    }
+    
+    public static function findSearch( $key )
+    {
+        $articles = new Articles();
+        $sql = 'select a.id,a.title,a.face,a.content,a.author,a.pubtime,c.name as catname,  cat_id as catid  from fcms_articles as a '
+                . 'join fcms_article_cats as c on a.cat_id = c.id '
+                . 'where match( a.title,a.description,a.content ) against ( ? IN BOOLEAN MODE)  ';
+        return new Resultset(null, $articles, $articles->getReadConnection()->query($sql, [ $key ]));
     }
 }

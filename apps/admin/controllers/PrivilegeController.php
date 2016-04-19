@@ -10,10 +10,10 @@ namespace apps\admin\controllers;
 use apps\admin\controllers\AdminBaseController;
 use apps\admin\models\PriPris;
 use enums\SystemEnums;
-use Phalcon\Paginator\Adapter\Model as PaginatorModel;
+use libraries\TimeUtils;
+use Phalcon\Paginator\Adapter\QueryBuilder;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\PresenceOf;
-use libraries\TimeUtils;
 
 class PrivilegeController extends AdminBaseController 
 {
@@ -33,15 +33,19 @@ class PrivilegeController extends AdminBaseController
     {
         $num = $this->request->getQuery( 'page', 'int' );
         $currentPage = $num ? $num : 1;
-        
         //只显示首页
-        $objPri = PriPris::find( array( 'pid=1 and delsign=' . SystemEnums::DELSIGN_NO, 
-                     'columns' => 'id,name,display,src,apid, pid', 'order'=> 'id') );
-        $paginator = new PaginatorModel( array( 
-            'data'  => $objPri,
-            'limit' => 10,
+        $builder = $this->modelsManager->createBuilder()
+                    ->columns( 'id,name,display,src,apid, pid' )
+                    ->from( 'apps\admin\models\PriPris' )
+                    ->where( 'pid=1 and delsign=' . SystemEnums::DELSIGN_NO )
+                    ->orderBy( 'sort,id');
+        
+        $paginator = new QueryBuilder( array( 
+            'builder'  => $builder,
+            'limit' => 20,
             'page'  => $currentPage
         ));
+        
         $page = $paginator->getPaginate();
         $this->view->page = $page;
     }
@@ -86,7 +90,7 @@ class PrivilegeController extends AdminBaseController
         if( $id )
         {
             $arr = PriPris::find( [  'pid=?0 and delsign=' . SystemEnums::DELSIGN_NO, 
-                    'bind' => [ $id ], 'columns' => 'id,name,display' ] )->toArray();
+                    'bind' => [ $id ], 'columns' => 'id,name,display' , 'order' => 'sort asc' ] )->toArray();
             if( $arr )
             {
                 $this->success( '成功', [ 'data' => $arr ] );
@@ -107,7 +111,7 @@ class PrivilegeController extends AdminBaseController
         $id = $this->request->getQuery( 'id', 'int' );
         if( $id )
         {
-            $pri = PriPris::findFirst( [  'id=?0', 'bind' => [ $id ], 'columns' => 'id,pid,name,display,descr,src, apid,type' ] );
+            $pri = PriPris::findFirst( [  'id=?0', 'bind' => [ $id ], 'columns' => 'id,pid,name,display,descr,src, apid,type,sort,loadmode' ] );
             if( $pri )
             {
                 if(  $pri->pid  ) //获得上级
@@ -170,7 +174,6 @@ class PrivilegeController extends AdminBaseController
     public function saveAction()
     {
         $this->csrfCheck();
-        
         $id = $this->request->getPost( 'id', 'int' );
         $pid = $this->request->getPost( 'pid', 'int' );
         $data[ 'name' ] = $this->request->getPost( 'name', 'string' );
@@ -179,13 +182,13 @@ class PrivilegeController extends AdminBaseController
         $data[ 'src' ] = $this->request->getPost( 'src', 'string' );
         $data[ 'display' ] = $this->request->getPost( 'display', 'int');
         $data[ 'loadmode' ] = $this->request->getPost( 'loadmode', 'int' );
-        $data[ 'descr' ] = $this->request->getPost( 'descr', 'string' );
+//        $data[ 'descr' ] = $this->request->getPost( 'descr', 'string' );
         $data[ 'type' ] = $this->request->getPost( 'type', 'int' );
         $sort = $this->request->getPost( 'sort', 'int' );
         $data[ 'sort' ] = $sort ? $sort : 0;
         $this->validation( $data );
         $data[ 'uptime' ] = TimeUtils::getFullTime();
-        
+
         if( $id ) //编辑
         {
             if( $data[ 'type'] == SystemEnums::PRI_MENU ) //类型是纯菜单的话，src,apid不可更新
@@ -214,7 +217,7 @@ class PrivilegeController extends AdminBaseController
             }
             
             //防止名字重复
-            $isSame = PriPris::findFirst( [ 'name=?0 and delsign=' . SystemEnums::DELSIGN_NO, 'bind' => [ $data[ 'name' ]], 'columns' => 'name' ]);
+            $isSame = PriPris::findFirst( [ 'name=?0 and pid=?1 and delsign=' . SystemEnums::DELSIGN_NO, 'bind' => [ $data[ 'name' ], $pid ], 'columns' => 'name' ]);
             if( $isSame )
                 $this->error( '菜单名重复' );
             
@@ -322,11 +325,13 @@ class PrivilegeController extends AdminBaseController
     public function saveControllerAction()
     {
     	$this->csrfCheck();
-    	
         $moduleId = $this->request->getPost( 'moduleId', 'int' );
-        $src = $this->request->getPost( 'src', 'string');
+        $src = $this->request->getPost( 'src', 'string'); 
+        
         if( $moduleId && $src )
         {
+            //控制器必须是小写
+            $src = strtolower( $src );
             $date = TimeUtils::getFullTime();
             $model = new PriPris();
             $status = $model->save( [ 'apid' => $moduleId, 'src' => $src, 'uptime' => $date, 'addtime' => $date, 

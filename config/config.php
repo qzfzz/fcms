@@ -5,7 +5,7 @@ return new \Phalcon\Config(array(
         'adapter'  => 'Mysql',
         'host'     => '127.0.0.1',
         'username' => 'root',
-        'password' => 'root',
+        'password' => 'mysql',
         'dbname'   => 'fcms',
         'charset'  => 'utf8',
         'prefix'   => 'fcms_',
@@ -24,14 +24,14 @@ return new \Phalcon\Config(array(
 	        'memcache'     => array(
                 'frontend' => array( 'lifetime' => 14400 ),
                 'backend'  => array(
-	                'host' => '127.0.0.1',
+	                'host'     => '127.0.0.1',
 	                'port' => '11211'
                 )
 	        ),
 	        'memcached' => array(
                 'backend' => array( 
                     array(
-                        'host'   => '127.0.0.1',
+                        'host'     => '127.0.0.1',
                         'port'   => '11211',
                         'weight' => '1'
                     )
@@ -54,11 +54,11 @@ return new \Phalcon\Config(array(
 	        'redisCache'   => array( 
                 'frontend' => array( 'lifetime' => 14400 ),
                 'backend'  => array(
-                    'host'       => '127.0.0.1',
+                    'host'     => '127.0.0.1',
                     'port'       => 6379,
                     //'auth'     => 'foobared',
                     'persistent' => false,
-                    'prefix'     => 'fcms_'
+                    'prefix'   => 'fcms_'
                 )
             ),
 	        'fileCache'    => array( 
@@ -79,10 +79,14 @@ return new \Phalcon\Config(array(
 	        )
     ),
     'beanstalk' => array( 
-        'host'  => '127.0.0.1', 
-        'port'  => 11300 ),
+        'host'     => '127.0.0.1', 
+        'port'  => 11300 
+    ),
+    'backupDir' => '/backup/source/',
+    'tmpDownloadDir' => '/backup/source/tmp/',
+    'tmpReverseDir' => 'tmp/',
     'admin_regenrator_time_interval' => 3 * 60,
     'home_regenarater_time_interval' => 3 * 60,
-    'sensitive_default_replace'		 => '**',
-    )
-);
+    'sensitive_default_replace'		 => '**'
+    
+) );

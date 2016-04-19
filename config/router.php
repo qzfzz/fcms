@@ -37,8 +37,8 @@ $router->add('/:module/:controller/:action/:params', array(
 ));
 
 // url router
-$router->setDefaultModule( 'install' );
-$router->setDefaultController( 'index' );
+$router->setDefaultModule( 'admin' );
+$router->setDefaultController( 'login' );
 $router->setDefaultAction( 'index' );
 
 // $router->add( '/',array(

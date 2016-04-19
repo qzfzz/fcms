@@ -99,6 +99,9 @@
                                 <input type="hidden" id="controllerId" name="controllerId" value="{% if controller is not empty %}{{ controller[ 'id'] | escape_attr }}{% endif %}">
                             </p>
                         </div>
+                        <div class="col-xs-3 text-left">
+                            <span class="help-block"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;必须是小写字母</span>
+                        </div>
                     </div>
                     
                     <div class="form-group has-feedback text-right only-menu">
@@ -108,7 +111,7 @@
                             <span class="glyphicon form-control-feedback"></span>
                         </div>
                         <div class="col-xs-3 text-left">
-                            <span class="help-block">首字符不能为“_”</span>
+                            <span class="help-block"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;首字符不能为“_”,且只能为英文字母</span>
                         </div>
                     </div>
                     {% endif %}    
@@ -241,6 +244,12 @@
                     } 
                     else //非法控制器 判断是否添加控制器
                     {
+                        var reg = /[^a-z_]/;
+                        if( reg.test( src ))
+                        {
+                            toastr.error( '请填写小写字母');
+                            return false;
+                        }
                         var coption = {};
                         coption.title = '是否在 '+ moduleName +' 下添加控制器：' + src + '？';
                         coption.confirm = function(){
@@ -385,8 +394,29 @@
             var csrf = { key : '{{ security.getTokenKey() }}', token :  '{{ security.getToken() }}'};
             //校验数据是否正确
             $( ':text' ).blur( function(){
-               var value = $( this ).val();
+               var value = $.trim( $( this ).val());
+               var status = true;
                if( value )
+               {
+                   var name = $( this ).attr( 'name' ); //排序
+                   if( name === 'sort')
+                   {
+                        if( isNaN( value ))
+                        {
+                            status = false;
+                        }
+                   }
+                   else if( name === 'src') //操作
+                   {
+                        var isChar = /[^a-zA-Z_]/, isUnder = isUnder = /^_/;
+                        if( isChar.test( value ) || isUnder .test( value ))
+                        {
+                            status = false;
+                        }
+                   }
+               }
+               
+               if( value && status )
                {
                    $( this ).parents( '.form-group' ).addClass( 'has-success' ).removeClass( 'has-error' );
                    $( this ).siblings( 'span' ).addClass( 'glyphicon-ok' ).removeClass( 'glyphicon-remove' );
@@ -399,17 +429,24 @@
             });
             //保存
             $( '#save' ).click( function(){
-                
                 var src = $.trim( $( 'input[name=src]' ).val());
-                if( src.indexOf( '_' ) ===  0 )
+                var isChar = /[^a-zA-Z_]/, isUnder = isUnder = /^_/;
+                if( isChar.test( src ) || isUnder .test( src ))
                 {
-                    toastr.error( '请不要加_' );
+                    toastr.error( '请不要加_，且必须是字母' );
+                    return false;
+                }
+                return false;
+                var sort = $.trim( $( 'input[name=sort]' ).val() );
+                if( isNaN( sort ))
+                {
+                    toastr.error( '请输入数字' );
                     return false;
                 }
                 var data = $( '#form' ).serialize();
-                data += '&' +  $.param( csrf );
-                var type = $( 'input[name=type]:checked' ).val();
+                data += '&' + 'key=' + csrf.key + '&token=' + csrf.token;
 
+                var type = $( 'input[name=type]:checked' ).val();
                 if( type === '3' ) //如果只是菜单, 因为disable, data里面不包含type
                 {
                     data += '&type=3';

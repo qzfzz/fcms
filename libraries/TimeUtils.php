@@ -33,6 +33,15 @@ class TimeUtils
 	}
 	
 	/**
+	 * 取以时间文件名
+	 * @return string
+	 */
+	public static function getFullTimeFileName()
+	{
+	    return date( 'YmdHis', $_SERVER['REQUEST_TIME'] );
+	}
+	
+	/**
 	 * 取time search string
 	 */
 	public static function getTimeSearchStr( $timeFrom, $timeTo, $strKey )

@@ -47,7 +47,7 @@
             			<span style="font-weight:bold;font-size:16px;">安装选项：</span>
 						<div class="checkbox" style="display:inline-block">
 							<label for="exampleData" style="padding:0">&nbsp;是否安装示例数据&nbsp;</label>
-							<input type="checkbox" name="exampleData" id="exampleData" checked style="margin-left:5px">
+							<input type="checkbox" name="exampleData" id="exampleData" checked style="margin:0 0 0 5px;position:static;">
 					   </div>
             		</div>
             	</div>

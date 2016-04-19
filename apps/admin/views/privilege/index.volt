@@ -162,20 +162,21 @@
         $.get( '/admin/privilege/getSub', { id : id }, function( ret ){
             if( ! ret.status )
             {
+                var target = $( _this ).next();
                 for( var i in ret.data )
                 {
                     var clone = $( '.template' ).clone().removeClass( 'template').addClass( level + ' pid' + id ) 
                             .attr({ 'data-id' :  ret.data[i].id, 'data-pid' : id });
                     clone.find( '.pri-name' ).text( ret.data[i].name );
                     
-                    var target = $( _this ).next();
                     if( target.length )
                     {
                         target.before( clone );
                     }
                     else
                     {
-                        $( _this ).after( clone );
+              
+                        $( 'tbody' ).append( clone );
                     }
                 }
             }

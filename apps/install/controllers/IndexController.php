@@ -307,57 +307,67 @@ class IndexController extends Controller
             $dbPrefix = addslashes( $dbPrefix );
         }
         
-        $res = 0;
         $install = new FcmsInstall();
         if( !$install->connectDb( $dbHost, $dbPort, $dbUsername, $dbPassword ) )
         {
-            $res = "数据库配置信息有误";
+            $res = 1;//"数据库配置信息有误"
             file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '数据库配置信息有误' . PHP_EOL, 
                     FILE_APPEND );
         }
         else
         {
-            // 后台再次判断输入的用户名密码邮箱
-            $masterUsername = trim( $this->request->getPost( 'masterUsername', 'string' ) );
-            $masterPassword = trim( $this->request->getPost( 'masterPassword', 'string' ) );
-            $masterEmail = trim( $this->request->getPost( 'masterEmail', 'string' ) );
-            if( !get_magic_quotes_gpc() )
+            $sqlCreate = 'CREATE DATABASE ' . $dbName . ' DEFAULT CHARSET utf8 COLLATE utf8_general_ci;';
+            if( mysql_query( $sqlCreate ) )
             {
-                $masterUsername = addslashes( $masterUsername );
-                $masterPassword = addslashes( $masterPassword );
-                $masterEmail = addslashes( $masterEmail );
-            }
-            $usernamePattern = "/^\w{3,32}$/";
-            $passwordPattern = "/^\w{6,32}$/";
-            $userEmailPattern = "/^\w+(\.\w+)*@\w+(\.\w+)+$/";
-            
-            if( !preg_match( $usernamePattern, $masterUsername ) )
-            {
-                $res = "管理员用户名输入非法";
-                file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '管理员用户名输入非法' . PHP_EOL, FILE_APPEND );
-            }
-            else if( !preg_match( $passwordPattern, $masterPassword ) )
-            {
-                $res = "管理员密码输入非法";
-                file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '管理员密码输入非法' . PHP_EOL, FILE_APPEND );
-            }
-            else if( !preg_match( $userEmailPattern, $masterEmail ) )
-            {
-                $res = "管理员邮箱输入非法";
-                file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '管理员邮箱输入非法' . PHP_EOL, FILE_APPEND );
+                // 后台再次判断输入的用户名密码邮箱
+                $masterUsername = trim( $this->request->getPost( 'masterUsername', 'string' ) );
+                $masterPassword = trim( $this->request->getPost( 'masterPassword', 'string' ) );
+                $masterEmail = trim( $this->request->getPost( 'masterEmail', 'string' ) );
+                if( !get_magic_quotes_gpc() )
+                {
+                    $masterUsername = addslashes( $masterUsername );
+                    $masterPassword = addslashes( $masterPassword );
+                    $masterEmail = addslashes( $masterEmail );
+                }
+                $usernamePattern = "/^\w{3,32}$/";
+                $passwordPattern = "/^\w{6,32}$/";
+                $userEmailPattern = "/^\w+(\.\w+)*@\w+(\.\w+)+$/";
+                
+                if( !preg_match( $usernamePattern, $masterUsername ) )
+                {
+                    $res = 2;//"管理员用户名输入非法"
+                    file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '管理员用户名输入非法' . PHP_EOL, FILE_APPEND );
+                }
+                else if( !preg_match( $passwordPattern, $masterPassword ) )
+                {
+                    $res = 3;//"管理员密码输入非法"
+                    file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '管理员密码输入非法' . PHP_EOL, FILE_APPEND );
+                }
+                else if( !preg_match( $userEmailPattern, $masterEmail ) )
+                {
+                    $res = 4;//"管理员邮箱输入非法"
+                    file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '管理员邮箱输入非法' . PHP_EOL, FILE_APPEND );
+                }
+                else
+                {
+                    $res = 0;//成功
+                    $this->cookies->set( "dbHost", $dbHost, time() + 7200 );
+                    $this->cookies->set( "dbPort", $dbPort, time() + 7200 );
+                    $this->cookies->set( "dbUsername", $dbUsername, time() + 7200 );
+                    $this->cookies->set( "dbPassword", $dbPassword, time() + 7200 );
+                    $this->cookies->set( "dbName", $dbName, time() + 7200 );
+                    $this->cookies->set( "dbPrefix", $dbPrefix, time() + 7200 );
+                    $this->cookies->set( "masterUsername", $masterUsername, time() + 7200 );
+                    $this->cookies->set( "masterPassword", md5( $masterPassword ), time() + 7200 );
+                    $this->cookies->set( "masterEmail", $masterEmail, time() + 7200 );
+                }
             }
             else
-           {
-                $this->cookies->set( "dbHost", $dbHost, time() + 7200 );
-                $this->cookies->set( "dbPort", $dbPort, time() + 7200 );
-                $this->cookies->set( "dbUsername", $dbUsername, time() + 7200 );
-                $this->cookies->set( "dbPassword", $dbPassword, time() + 7200 );
-                $this->cookies->set( "dbName", $dbName, time() + 7200 );
-                $this->cookies->set( "dbPrefix", $dbPrefix, time() + 7200 );
-                $this->cookies->set( "masterUsername", $masterUsername, time() + 7200 );
-                $this->cookies->set( "masterPassword", md5( $masterPassword ), time() + 7200 );
-                $this->cookies->set( "masterEmail", $masterEmail, time() + 7200 );
+            {
+                $res = 5;//数据库名已存在，请修改！
+                file_put_contents( APP_ROOT . self::LOG_PATH, date( 'Y-m-d H:i:s' ) . '数据库名已存在' . PHP_EOL, FILE_APPEND );
             }
+            
         }
         
         echo $res;

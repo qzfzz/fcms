@@ -5,7 +5,6 @@
 <link rel="stylesheet" type="text/css" href="/bootstrap/3.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/bootstrap/toastr/toastr.min.css">
 <link rel="stylesheet" href="/css/fcmsIndex/common.css" />
-<link rel="stylesheet" href="/css/fcmsIndex/demo.css" />
 <style>
 	.operate {
         margin-right: 10px;
@@ -92,7 +91,7 @@
 	</ul>
 	
 	<div class="tab-content" style="padding:20px 0px;">
-		<div role="tabpannel" class="tab-pane active" id="userList">
+		<div role="tabpannel" class="tab-pane active">
 		    <?php if( isset( $slides->items ) && count( $slides->items ) > 0 ){ ?>
 		    <table class="table table-hover table-bordered">
 		        <thead>

@@ -1,0 +1,107 @@
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: configReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 222
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: logsReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 228
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: routerReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 234
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache1Path in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 238
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache1WriteId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 239
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache1ReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 240
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache2Path in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 244
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache2WriteId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 245
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache2ReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 246
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache3Path in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 250
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache3WriteId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 251
+[12-Apr-2016 16:33:29 Asia/Shanghai] PHP Notice:  Undefined variable: cache3ReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 252
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: configReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 222
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: logsReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 228
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: routerReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 234
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache1Path in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 238
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache1WriteId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 239
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache1ReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 240
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache2Path in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 244
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache2WriteId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 245
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache2ReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 246
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache3Path in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 250
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache3WriteId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 251
+[12-Apr-2016 16:33:39 Asia/Shanghai] PHP Notice:  Undefined variable: cache3ReadId in /Users/bruce/develop/php/admin.huaer.dev/apps/install/cache/_users_bruce_develop_php_admin.huaer.dev_apps_install_views_index_check.volt.php on line 252
+[13-Apr-2016 17:16:24 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'Phalcon\Cache\Exception' with message 'Failed storing data in memcached, error code: 47' in phalcon/cache/backend/libmemcached.zep:223
+Stack trace:
+#0 [internal function]: Phalcon\Cache\Backend\Libmemcached->save('oloacbpp01uflmu...', 'sid|s:32:"9a5d8...', 14400)
+#1 [internal function]: Phalcon\Session\Adapter\Libmemcached->write('oloacbpp01uflmu...', 'sid|s:32:"9a5d8...')
+#2 [internal function]: session_write_close()
+#3 [internal function]: Phalcon\Session\Adapter->__destruct()
+#4 {main}
+  thrown in phalcon/cache/backend/libmemcached.zep on line 223
+[13-Apr-2016 17:16:24 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'Phalcon\Cache\Exception' with message 'Failed storing data in memcached, error code: 47' in phalcon/cache/backend/libmemcached.zep:223
+Stack trace:
+#0 [internal function]: Phalcon\Cache\Backend\Libmemcached->save('oloacbpp01uflmu...', '03255c90e8a048c...', 14400)
+#1 [internal function]: Phalcon\Session\Adapter\Libmemcached->write('oloacbpp01uflmu...', '03255c90e8a048c...')
+#2 [internal function]: session_write_close()
+#3 [internal function]: Phalcon\Session\Adapter->__destruct()
+#4 {main}
+  thrown in phalcon/cache/backend/libmemcached.zep on line 223
+[13-Apr-2016 17:16:48 Asia/Shanghai] PHP Notice:  Memcache::connect(): Server 127.0.0.1 (tcp 11211) failed with: Connection refused (61) in /Users/bruce/develop/php/admin.huaer.dev/apps/cms/libraries/CacheMagCenter.php on line 169
+[13-Apr-2016 17:16:48 Asia/Shanghai] PHP Warning:  Memcache::connect(): Can't connect to 127.0.0.1:11211, Connection refused (61) in /Users/bruce/develop/php/admin.huaer.dev/apps/cms/libraries/CacheMagCenter.php on line 169
+[13-Apr-2016 17:16:54 Asia/Shanghai] PHP Notice:  Memcache::connect(): Server 127.0.0.1 (tcp 11211) failed with: Connection refused (61) in /Users/bruce/develop/php/admin.huaer.dev/apps/cms/libraries/CacheMagCenter.php on line 169
+[13-Apr-2016 17:16:54 Asia/Shanghai] PHP Warning:  Memcache::connect(): Can't connect to 127.0.0.1:11211, Connection refused (61) in /Users/bruce/develop/php/admin.huaer.dev/apps/cms/libraries/CacheMagCenter.php on line 169
+[19-Apr-2016 15:01:40 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'Phalcon\Cache\Exception' with message 'Failed storing data in memcached, error code: 47' in phalcon/cache/backend/libmemcached.zep:223
+Stack trace:
+#0 [internal function]: Phalcon\Cache\Backend\Libmemcached->save('ipcm0ndu8kmddfh...', 'sid|s:32:"1d13b...', 14400)
+#1 [internal function]: Phalcon\Session\Adapter\Libmemcached->write('ipcm0ndu8kmddfh...', 'sid|s:32:"1d13b...')
+#2 [internal function]: session_write_close()
+#3 [internal function]: Phalcon\Session\Adapter->__destruct()
+#4 {main}
+  thrown in phalcon/cache/backend/libmemcached.zep on line 223
+[19-Apr-2016 15:01:40 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'Phalcon\Cache\Exception' with message 'Failed storing data in memcached, error code: 47' in phalcon/cache/backend/libmemcached.zep:223
+Stack trace:
+#0 [internal function]: Phalcon\Cache\Backend\Libmemcached->save('ipcm0ndu8kmddfh...', '03255c90e8a048c...', 14400)
+#1 [internal function]: Phalcon\Session\Adapter\Libmemcached->write('ipcm0ndu8kmddfh...', '03255c90e8a048c...')
+#2 [internal function]: session_write_close()
+#3 [internal function]: Phalcon\Session\Adapter->__destruct()
+#4 {main}
+  thrown in phalcon/cache/backend/libmemcached.zep on line 223
+[19-Apr-2016 15:01:40 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'Phalcon\Cache\Exception' with message 'Failed storing data in memcached, error code: 47' in phalcon/cache/backend/libmemcached.zep:223
+Stack trace:
+#0 [internal function]: Phalcon\Cache\Backend\Libmemcached->save('shnprqrni3hqnn8...', 'sid|s:32:"950fa...', 14400)
+#1 [internal function]: Phalcon\Session\Adapter\Libmemcached->write('shnprqrni3hqnn8...', 'sid|s:32:"950fa...')
+#2 [internal function]: session_write_close()
+#3 [internal function]: Phalcon\Session\Adapter->__destruct()
+#4 {main}
+  thrown in phalcon/cache/backend/libmemcached.zep on line 223
+[19-Apr-2016 15:01:40 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'Phalcon\Cache\Exception' with message 'Failed storing data in memcached, error code: 47' in phalcon/cache/backend/libmemcached.zep:223
+Stack trace:
+#0 [internal function]: Phalcon\Cache\Backend\Libmemcached->save('shnprqrni3hqnn8...', 'sid|s:32:"79ab0...', 14400)
+#1 [internal function]: Phalcon\Session\Adapter\Libmemcached->write('shnprqrni3hqnn8...', 'sid|s:32:"79ab0...')
+#2 [internal function]: session_write_close()
+#3 [internal function]: Phalcon\Session\Adapter->__destruct()
+#4 {main}
+  thrown in phalcon/cache/backend/libmemcached.zep on line 223
+[19-Apr-2016 15:04:26 Asia/Shanghai] PHP Notice:  Undefined variable: light in /Users/bruce/develop/php/admin.huaer.dev/apps/cms/cache/_users_bruce_develop_php_admin.huaer.dev_apps_cms_views_default_header.volt.php on line 161
+[19-Apr-2016 15:04:37 Asia/Shanghai] PHP Notice:  Undefined variable: light in /Users/bruce/develop/php/admin.huaer.dev/apps/cms/cache/_users_bruce_develop_php_admin.huaer.dev_apps_cms_views_default_header.volt.php on line 161
+[19-Apr-2016 15:05:27 Asia/Shanghai] PHP Notice:  Undefined variable: light in /Users/bruce/develop/php/admin.huaer.dev/apps/cms/cache/_users_bruce_develop_php_admin.huaer.dev_apps_cms_views_default_header.volt.php on line 161
+[19-Apr-2016 15:08:33 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:08:35 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:08:36 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:08:38 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:10:01 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:11:52 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:11:53 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:12:18 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:12:20 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:12:21 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:12:23 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:12:29 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:12:57 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:13:00 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:13:47 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:13:58 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:13:59 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:14:03 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:14:03 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:14:10 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 122
+[19-Apr-2016 15:18:56 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:19:07 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:23:12 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:23:32 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 124
+[19-Apr-2016 15:23:38 Asia/Shanghai] PHP Warning:  fsockopen(): unable to connect to 127.0.0.1:11300 (Connection refused) in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/listeners/DispatcherListener.php on line 124
+[19-Apr-2016 15:25:19 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:28:08 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149
+[19-Apr-2016 15:30:18 Asia/Shanghai] PHP Notice:  Undefined index: username in /Users/bruce/develop/php/admin.huaer.dev/apps/admin/controllers/BackupController.php on line 149

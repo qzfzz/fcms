@@ -1,6 +1,5 @@
 //js for fcms public
 
-
 //登录、注册弹出框
 function showRegisterPage(){
 	$( "#loginPage" ).attr( "class", "hide" );

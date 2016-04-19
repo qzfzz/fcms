@@ -93,16 +93,27 @@ $( document ).ready( function(){
 			};
 			
 			$.post( '/install/index/checkInputInfo', data, function( res ){
-				if( 0 == res )
-				{
-					location.href = '/install/index/done';
-				}
-				else
-				{
-					alert( res );
+				switch( parseInt( res ) ){
+					case 0:
+						location.href = '/install/index/done';
+						break;
+					case 1:
+						alert( '数据库配置信息有误' );
+						break;
+					case 2:
+						alert( '管理员用户名输入非法' );
+						break;
+					case 3:
+						alert( '管理员密码输入非法' );
+						break;
+					case 4:
+						alert( '管理员邮箱输入非法' );
+						break;
+					case 5:
+						alert( '数据库名已存在，请修改' );
+						break;
 				}
 			} );
-			
 		}
 		
 	} );

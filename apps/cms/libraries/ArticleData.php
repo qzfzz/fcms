@@ -214,25 +214,22 @@ class ArticleData implements InjectionAwareInterface{
 	{
 		if( false != $limit && false != $catid )
 			$where = array(
-				'column'	=> 'id,addtime,uptime,delsign,descr,name,title,keywords,type,description,nofollow,img,parent_id',
 				'conditions'=> 'delsign=:del: and id=:cid: ORDER BY uptime DESC LIMIT ' . $limit,
 				'bind'		=> array( 'del' => SystemEnums::DELSIGN_NO, 'cid' => $catid  ),
 			);
 		else if( false !=  $catid )
 			$where = array(
-				'column'	=> 'id,addtime,uptime,delsign,descr,name,title,keywords,type,description,nofollow,img,parent_id',
 				'conditions'=> 'delsign=:del: and id=:cid: ORDER BY uptime DESC',
 				'bind'		=> array( 'del' => SystemEnums::DELSIGN_NO , 'cid' => $catid ),
 			);
 		else 
 		    $where = array(
-		                    'column'	=> 'id,addtime,uptime,delsign,descr,name,title,keywords,type,description,nofollow,img,parent_id',
 		                    'conditions'=> 'delsign=:del: ORDER BY uptime DESC',
 		                    'bind'		=> array( 'del' => SystemEnums::DELSIGN_NO ),
 		    );
 		
 		$catinfo = ArticleCats::findFirst( $where );
-		if( count( $catinfo ) > 0 && false != $catinfo )
+		if(  $catinfo && count( $catinfo ) > 0  )
 		{
 		    $arrResult[ 'cateinfo' ] = $catinfo;
 			//设置 文章分类 vo
@@ -242,8 +239,8 @@ class ArticleData implements InjectionAwareInterface{
 			//设置 文章 vo
 			$where = array(
 				'column'    => 'id,cat_id,addtime,uptime,title',
-			    'conditions'=> 'delsign=:del:',
-			    'bind'      => array( 'del' => SystemEnums::DELSIGN_NO ),
+			    'conditions'=> 'delsign=:del: and cat_id=:cid:',
+			    'bind'      => array( 'del' => SystemEnums::DELSIGN_NO, 'cid'=> $catinfo->id ),
 			    'limit'     => 5,
 			);
 			$artList = $catinfo->getArticlelist( $where );
