@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50536
 Source Host           : localhost:3306
-Source Database       : fcms
+Source Database       : fcms_empty
 
 Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2016-04-01 11:08:41
+Date: 2016-04-19 15:55:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -209,6 +209,27 @@ CREATE TABLE `fcms_article_visits` (
 
 -- ----------------------------
 -- Records of fcms_article_visits
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for fcms_backup
+-- ----------------------------
+DROP TABLE IF EXISTS `fcms_backup`;
+CREATE TABLE `fcms_backup` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `addtime` datetime DEFAULT NULL COMMENT '添加时间',
+  `uptime` datetime DEFAULT NULL COMMENT '修改时间',
+  `delsign` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '删除标记（0为未删除，1为已删除）',
+  `name` varchar(64) NOT NULL COMMENT '备份文件名称（只允许字母数字或下划线）',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '备份类型（0为全备份，1为仅图片，2为仅数据库）',
+  `creator` varchar(32) NOT NULL COMMENT '该备份的创建人',
+  `size` varchar(32) NOT NULL COMMENT '备份文件大小（KB）',
+  `method` tinyint(1) unsigned NOT NULL COMMENT '备份方式（0为保存到服务器，1为直接下载）',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of fcms_backup
 -- ----------------------------
 
 -- ----------------------------
@@ -747,7 +768,7 @@ CREATE TABLE `fcms_pri_pris` (
   `type` tinyint(16) DEFAULT '0' COMMENT '0:操作 1：控制器  2 ： 模块  3:只是菜单',
   `apid` int(11) DEFAULT '0' COMMENT 'action controller module 的关系 apid代表 上一级',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=209 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=213 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fcms_pri_pris
@@ -894,11 +915,10 @@ INSERT INTO `fcms_pri_pris` VALUES ('198', '0000-00-00 00:00:00', '0000-00-00 00
 INSERT INTO `fcms_pri_pris` VALUES ('199', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '', '', '0', '0', 'slidegroup', '0', '0', '1', '162');
 INSERT INTO `fcms_pri_pris` VALUES ('200', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '', '幻灯片管理', '197', '1', 'index', '0', '0', '0', '198');
 INSERT INTO `fcms_pri_pris` VALUES ('201', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '', '幻灯片组管理', '197', '1', 'index', '0', '0', '0', '199');
-INSERT INTO `fcms_pri_pris` VALUES ('204', '2016-03-28 15:02:00', '2016-03-28 15:02:00', '1', '', 'test', '1', '0', 'test', '0', '0', '0', '171');
-INSERT INTO `fcms_pri_pris` VALUES ('205', '2016-03-28 16:58:10', '2016-03-28 16:58:10', '1', '', 'test', '1', '0', '_56f8f222b5a48', '0', '0', '3', '184');
-INSERT INTO `fcms_pri_pris` VALUES ('206', '2016-03-29 09:36:13', '2016-03-29 09:36:13', '1', '', '123', '1', '0', '_56f9dc0d39857', '0', '0', '3', '184');
-INSERT INTO `fcms_pri_pris` VALUES ('207', '2016-03-29 10:03:33', '2016-03-29 10:03:33', '1', '', 'a', '1', '0', '_56f9e275ceb76', '0', '0', '3', '184');
-INSERT INTO `fcms_pri_pris` VALUES ('208', '2016-03-29 10:12:44', '2016-03-29 10:12:44', '1', '', 'tt', '1', '0', '_56f9e49c10923', '0', '0', '3', '184');
+INSERT INTO `fcms_pri_pris` VALUES ('209', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '', '备份管理', '127', '1', '_backup', '0', '0', '3', '184');
+INSERT INTO `fcms_pri_pris` VALUES ('210', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '', '', '0', '0', 'backup', '0', '0', '1', '162');
+INSERT INTO `fcms_pri_pris` VALUES ('211', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '', '数据备份', '209', '1', 'index', '0', '0', '0', '210');
+INSERT INTO `fcms_pri_pris` VALUES ('212', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '', '备份设置', '76', '1', 'backupsetting', '0', '0', '0', '210');
 
 -- ----------------------------
 -- Table structure for fcms_pri_roles
