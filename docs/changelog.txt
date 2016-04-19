@@ -4,7 +4,7 @@ Apache Licence2
 
 
 
-Version 
+Version 0.1.1a
 发布日期：2016-04-13
 【新添加功能】
 1.添加备份设置模块（修改默认备份位置）；
